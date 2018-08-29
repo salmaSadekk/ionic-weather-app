@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     Today's Whether
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="recipeform" (ngSubmit)="onBtnClick()">
+      <ion-list>
+        <ion-item>
+          <ion-label>choose a City </ion-label>
+          <ion-select placeholder="cities" formControlName='city' >
+            <ion-option *ngFor="let city of cities" [value]="Option" >{{city}}</ion-option>
+          </ion-select>
+      </ion-item>
+     
+     <button ion-button type="submit"  >View whether</button>
+      </ion-list>
+
+    </form>
+    
+   <div *ngIf="visibilezdiv">
+    <ion-card >
+      <ion-card-header>
+     <p> {{city}}</p>  
+      </ion-card-header>
+      <ion-card-content style="background:yellow">
+        <img [src]="icon"/>
+        <p><b>Current Wheather </b>{{DescriptionWeather}}</p>
+        <p><b>Wind </b>{{DescriptionWind}}</p>
+        <p> <b>cloud</b>{{Descriptioncloud}}</p>
+      
+        <ion-grid>
+          <ion-row border="2">
+            <ion-col>
+              <b>MaxTemp</b> {{MaxTemp }}
+            </ion-col>
+            <ion-col>
+                <b>MinTemp</b> {{MinTemp }}
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+       
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>

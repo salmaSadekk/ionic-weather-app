@@ -1,0 +1,7 @@
+{
+  "name": "wheatherApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
