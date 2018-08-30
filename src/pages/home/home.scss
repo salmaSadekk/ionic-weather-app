@@ -3,17 +3,22 @@ ion-content{
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Roboto";
+  color:white ;
 }
 ion-card{
-	background-color: transparent ;
+ background: transparent !important;
+
 
 }
 
 #app-container {
     position: relative;
+   
     
   }
   img{
+      float: left;
+      display: inline-block;
       height:50px ;
       width: 10px ;
   }
