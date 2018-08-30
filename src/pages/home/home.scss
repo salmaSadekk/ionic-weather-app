@@ -5,15 +5,15 @@ ion-content{
   font-family: "Roboto";
 }
 ion-card{
-	border-color: rgba(0, 0, 0, 0);
-	background-color: rgba(0, 0, 0, 0);
-	color: white; 
+	background-color: transparent ;
 
 }
-form{
-    background-color: transparent;   
-}
+
 #app-container {
     position: relative;
     
+  }
+  img{
+      height:50px ;
+      width: 10px ;
   }
