@@ -1,44 +1,46 @@
 <ion-header>
   <ion-navbar>
-    <ion-title style="color:white">
+    <ion-title >
      Today's Whether
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding id ="app-container">
-    <form [formGroup]="recipeform" (ngSubmit)="onBtnClick()">
+    <form id="f1" [formGroup]="recipeform" >
       <ion-list>
         <ion-item>
-          <ion-label>choose a City </ion-label>
-          <ion-select placeholder="cities" formControlName='city' >
-            <ion-option *ngFor="let city of cities" [value]="Option" type ="submit">{{city}}</ion-option>
+          <ion-label >choose a City </ion-label>
+          <ion-select *ngIf="DomReady" placeholder="cities" formControlName='city' (ionChange)="triggerFalseClick()">
+            <ion-option *ngFor="let city of cities" [value]="Option"  >{{city}}</ion-option>
           </ion-select>
       </ion-item>
-     
-     <button ion-button type="submit"  >View whether</button>
+      
+     <!--  <button  ion-button type="submit"  >View whether</button>-->
+    
       </ion-list>
 
     </form>
-    
+     
    <div *ngIf="visibilezdiv">
     <ion-card >
       <ion-card-header>
      <p> {{city}}</p>  
       </ion-card-header>
       <ion-card-content >
-        <img [src]="icon"  width="50px" height = "auto"/>
-        <p><b>Current Wheather </b>{{DescriptionWeather}}</p>
-        <p><b>Wind </b>{{DescriptionWind}}</p>
-        <p> <b>cloud</b>{{Descriptioncloud}}</p>
+        <p  class="CT" >{{currentTemp }}</p>
+        <img [src]="icon"  width="30px" height = "auto"/>
+        <p ><b>Current Wheather :  </b>{{DescriptionWeather}}</p>
+        <p><b>Wind : </b>{{DescriptionWind}}</p>
+        <p> <b>cloud : </b>{{Descriptioncloud}}</p>
       
         <ion-grid>
           <ion-row>
             <ion-col>
-              <b>MaxTemp</b> {{MaxTemp }}
+              <b>MaxTemp :</b> {{MaxTemp }}
             </ion-col>
             <ion-col>
-                <b>MinTemp</b> {{MinTemp }}
+                <b>MinTemp :</b> {{MinTemp }}
               </ion-col>
           </ion-row>
         </ion-grid>
